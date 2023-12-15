@@ -1,25 +1,35 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial=scale=1.0">
-    <link rel="styleheet" href="style.css">
-    <title>Document</title>
+    <title>Telegram Web App</title>
 </head>
 <body>
+    <h1>Мой бот Telegram</h1>
+    <h2>Кол-во монеток: <span id="coin-count"></span></h2>
+    <button id="find-room-btn">Найти комнату с играми</button>
+    <button id="create-room-btn">Создать комнату с игрой</button>
+    <button id="add-coins-btn">Пополнить монетки</button>
 
-    <div class="container">
-        <div class="inner">
-            <div class="item">
-                <p>Тестовое сообщение</p>
-                <button class="btn" id="btn">Отправить</button>
-            </div>
-        </div>
+    <div id="room-list" style="display: none;">
+        <h3>Список комнат с игрой:</h3>
     </div>
 
-    <script scr="https://telegram.org/js/telegram-web-app.js"></script>
+    <div id="create-room-menu" style="display: none;">
+        <h3>Меню создания комнаты:</h3>
+        <label for="game-select">Выберите игру:</label>
+        <select id="game-select">
+            <option value="rock-paper-scissors">Камень-ножницы-бумага</option>
+        </select>
+        <label for="currency-select">Выберите валюту:</label>
+        <select id="currency-select">
+            <option value="tokens">Фантики</option>
+            <option value="coins">Монетки</option>
+        </select>
+        <label for="bet-input">Введите кол-во ставки:</label>
+        <input type="number" id="bet-input">
+        <button id="create-btn">Создать</button>
+    </div>
+
     <script src="app.js"></script>
-
 </body>
-
 </html>
